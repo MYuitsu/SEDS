@@ -1,0 +1,22 @@
+.toolbar-title {
+    font-weight: 500;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .menu-btn {
+    margin-right: 1rem;
+  }
+  
+  .main-container {
+    height: calc(100vh - 56px);
+  }
+  
+  @media (max-width: 768px) {
+    .main-container {
+      height: calc(100vh - 64px);
+    }
+  }
+  

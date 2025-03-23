@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span>SEDS Dashboard</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="Notifications">
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <div class="dashboard-container">
+    <mat-card *ngFor="let patient of patients" class="patient-card" (click)="openPatientDetails(patient.id)">
+      <mat-card-header>
+        <mat-card-title>{{ patient.name }}</mat-card-title>
+        <mat-card-subtitle>Age: {{ patient.age }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="vital-signs">
+          <div class="status-badge" 
+               [ngClass]="{'critical': patient.status === 'red', 'warning': patient.status === 'yellow', 'stable': patient.status === 'green'}">
+            {{ patient.status | uppercase }}
+          </div>
+          <p>Condition: {{ patient.condition }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Patient Details</span>
+  </mat-toolbar>
+  
+  <div class="patient-details-container" *ngIf="patient">
+    <mat-card class="patient-info">
+      <mat-card-header>
+        <mat-card-title>{{ patient.name }}</mat-card-title>
+        <mat-card-subtitle>Age: {{ patient.age }}, Gender: {{ patient.gender }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Condition:</strong> {{ patient.condition }}</p>
+        <p><strong>Vital Signs:</strong></p>
+        <ul>
+          <li>Heart Rate: {{ patient.vitalSigns.heartRate }} bpm</li>
+          <li>Blood Pressure: {{ patient.vitalSigns.bpSystolic }}/{{ patient.vitalSigns.bpDiastolic }} mmHg</li>
+          <li>SpO₂: {{ patient.vitalSigns.spO2 }}%</li>
+          <li>Temperature: {{ patient.vitalSigns.temperature }}°C</li>
+          <li>Respiratory Rate: {{ patient.vitalSigns.respiratoryRate }} breaths/min</li>
+        </ul>
+        <p *ngIf="patient.allergy"><strong>Allergy:</strong> {{ patient.allergy }}</p>
+        <p *ngIf="patient.medication"><strong>Medication:</strong> {{ patient.medication }}</p>
+        <p><strong>Clinical Impression:</strong> {{ patient.clinicalImpression }}</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <div class="actions">
+      <button mat-raised-button color="accent" (click)="onCallSupport()">Call Support</button>
+      <button mat-raised-button color="primary" (click)="onConfirmIntervention()">Confirm Intervention</button>
+      <button mat-raised-button color="warn" (click)="onAddQuickNote()">Quick Note</button>
+    </div>
+  </div>
+  
