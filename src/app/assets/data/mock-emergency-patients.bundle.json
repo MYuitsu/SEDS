@@ -1,364 +1,1355 @@
 {
-    "resourceType": "Bundle",
-    "type": "collection",
-    "entry": [
-      {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "cf776916-2067-432a-8102-9de1d1f0a223",
-          "identifier": [
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "cf776916-2067-432a-8102-9de1d1f0a223",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org/patient-id",
+            "value": "ER-0001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Smith",
+            "given": [
+              "John"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1959-04-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "8a282402-566a-4e36-bf77-69bc4d7f6bb8",
+        "patient": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "code": {
+          "coding": [
             {
-              "system": "http://hospital.smarthealth.org/patient-id",
-              "value": "ER-0001"
-            }
-          ],
-          "name": [
-            {
-              "use": "official",
-              "family": "Smith",
-              "given": [
-                "John"
-              ]
-            }
-          ],
-          "gender": "male",
-          "birthDate": "1959-04-15",
-          "address": [
-            {
-              "use": "home",
-              "line": [
-                "123 Emergency Lane"
-              ],
-              "city": "Springfield",
-              "state": "IL",
-              "postalCode": "62704",
-              "country": "USA"
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7980",
+              "display": "Penicillin"
             }
           ]
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "Condition",
-          "id": "604c5a0a-fdb4-49b9-9e7a-7b296ae5e95c",
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "code": {
-            "coding": [
+        },
+        "reaction": [
+          {
+            "manifestation": [
               {
-                "system": "http://snomed.info/sct",
-                "code": "22298006",
-                "display": "Myocardial infarction"
-              }
-            ]
-          },
-          "clinicalStatus": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active"
-              }
-            ]
-          },
-          "severity": {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "24484000",
-                "display": "Severe"
-              }
-            ]
-          },
-          "onsetDateTime": "2025-03-22T08:05:42.373584"
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "Observation",
-          "id": "c05ef16a-1c0f-42b5-af32-01faf8dd95e0",
-          "status": "final",
-          "category": [
-            {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                  "code": "vital-signs"
-                }
-              ]
-            }
-          ],
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "59408-5",
-                "display": "Oxygen saturation"
-              }
-            ]
-          },
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "effectiveDateTime": "2025-03-22T08:05:42.373584",
-          "valueQuantity": {
-            "value": 85,
-            "unit": "%",
-            "system": "http://unitsofmeasure.org",
-            "code": "%"
-          }
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "Observation",
-          "id": "79df6b0b-feee-479a-9db6-e2f7f080568a",
-          "status": "final",
-          "category": [
-            {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                  "code": "vital-signs"
-                }
-              ]
-            }
-          ],
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "85354-9",
-                "display": "Blood pressure panel"
-              }
-            ]
-          },
-          "component": [
-            {
-              "code": {
                 "coding": [
                   {
-                    "system": "http://loinc.org",
-                    "code": "8480-6",
-                    "display": "Systolic"
+                    "system": "http://snomed.info/sct",
+                    "code": "39579001",
+                    "display": "Anaphylactic reaction"
                   }
                 ]
-              },
-              "valueQuantity": {
-                "value": 90,
-                "unit": "mmHg",
-                "system": "http://unitsofmeasure.org",
-                "code": "mm[Hg]"
               }
-            },
-            {
-              "code": {
-                "coding": [
-                  {
-                    "system": "http://loinc.org",
-                    "code": "8462-4",
-                    "display": "Diastolic"
-                  }
-                ]
-              },
-              "valueQuantity": {
-                "value": 60,
-                "unit": "mmHg",
-                "system": "http://unitsofmeasure.org",
-                "code": "mm[Hg]"
-              }
-            }
-          ],
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "effectiveDateTime": "2025-03-22T08:05:42.373584"
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "Observation",
-          "id": "0479f3a0-88d7-4b5d-be62-f438bd7b16f7",
-          "status": "final",
-          "category": [
-            {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                  "code": "vital-signs"
-                }
-              ]
-            }
-          ],
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "8867-4",
-                "display": "Heart rate"
-              }
-            ]
-          },
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "effectiveDateTime": "2025-03-22T08:05:42.373584",
-          "valueQuantity": {
-            "value": 120,
-            "unit": "bpm",
-            "system": "http://unitsofmeasure.org",
-            "code": "/min"
+            ],
+            "severity": "severe"
           }
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "Observation",
-          "id": "b7a1a821-6d2b-4d5d-85fc-cec4bc2febc6",
-          "status": "final",
-          "category": [
+        ],
+        "clinicalStatus": {
+          "coding": [
             {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                  "code": "vital-signs"
-                }
-              ]
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
             }
-          ],
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "8310-5",
-                "display": "Body temperature"
-              }
-            ]
-          },
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "effectiveDateTime": "2025-03-22T08:05:42.373584",
-          "valueQuantity": {
-            "value": 37.8,
-            "unit": "C",
-            "system": "http://unitsofmeasure.org",
-            "code": "Cel"
-          }
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "Observation",
-          "id": "35661c53-bedc-4b9d-8887-01952b9ef1b5",
-          "status": "final",
-          "category": [
-            {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                  "code": "vital-signs"
-                }
-              ]
-            }
-          ],
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "9279-1",
-                "display": "Respiratory rate"
-              }
-            ]
-          },
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "effectiveDateTime": "2025-03-22T08:05:42.373584",
-          "valueQuantity": {
-            "value": 26,
-            "unit": "breaths/minute",
-            "system": "http://unitsofmeasure.org",
-            "code": "/min"
-          }
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "AllergyIntolerance",
-          "id": "8a282402-566a-4e36-bf77-69bc4d7f6bb8",
-          "patient": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "code": {
-            "coding": [
-              {
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "7980",
-                "display": "Penicillin"
-              }
-            ]
-          },
-          "reaction": [
-            {
-              "manifestation": [
-                {
-                  "coding": [
-                    {
-                      "system": "http://snomed.info/sct",
-                      "code": "39579001",
-                      "display": "Anaphylactic reaction"
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "clinicalStatus": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                "code": "active"
-              }
-            ]
-          },
-          "type": "allergy",
-          "category": [
-            "medication"
           ]
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "MedicationStatement",
-          "id": "b9d9bc34-cef2-4158-ac50-f26789565f10",
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "medicationCodeableConcept": {
+        },
+        "type": "allergy",
+        "category": [
+          "medication"
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "604c5a0a-fdb4-49b9-9e7a-7b296ae5e95c",
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22298006",
+              "display": "Myocardial infarction"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-03-24T08:05:42.373584"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c05ef16a-1c0f-42b5-af32-01faf8dd95e0",
+        "status": "final",
+        "category": [
+          {
             "coding": [
               {
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "1191",
-                "display": "Aspirin"
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
               }
             ]
-          },
-          "status": "active",
-          "effectiveDateTime": "2025-03-22T08:05:42.373584"
-        }
-      },
-      {
-        "resource": {
-          "resourceType": "ClinicalImpression",
-          "id": "f5a58639-fa61-45d5-a1e3-7ce9f05c2ed4",
-          "status": "active",
-          "description": "Patient shows classic signs of acute myocardial infarction including chest pain, hypoxia, and hypotension. Requires immediate intervention.",
-          "subject": {
-            "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
-          },
-          "date": "2025-03-22T08:05:42.373584"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:15:42.373584",
+        "valueQuantity": {
+          "value": 85,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
         }
       }
-    ]
-  }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "79df6b0b-feee-479a-9db6-e2f7f080568a",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 90,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 60,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:15:42.373584"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0479f3a0-88d7-4b5d-be62-f438bd7b16f7",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:15:42.373584",
+        "valueQuantity": {
+          "value": 120,
+          "unit": "bpm",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ecg-waveform-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11524-6",
+              "display": "EKG waveform panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:15:42.373584",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11525-3",
+                  "display": "Lead I"
+                }
+              ]
+            },
+            "valueSampledData": {
+              "origin": {
+                "value": 0,
+                "unit": "mV",
+                "system": "http://unitsofmeasure.org",
+                "code": "mV"
+              },
+              "period": 10,
+              "factor": 0.1,
+              "dimensions": 1,
+              "data": "0 0.1 0.2 0.1 0 0.1 0.2 0.4 0.6 0.8 1.0 0.8 0.6 0.2 0 -0.2 -0.2 -0.1 0 0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fluid-intake-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "intake-output"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8251-1",
+              "display": "Fluid intake"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:15:42.373584",
+        "valueQuantity": {
+          "value": 450,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "urine-output-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "intake-output"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9192-6",
+              "display": "Urine output"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:15:42.373584",
+        "valueQuantity": {
+          "value": 150,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "lab-troponin-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6598-7",
+              "display": "Troponin T"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:20:42.373584",
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": "ng/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ng/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gcs-score-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9269-2",
+              "display": "Glasgow Coma Scale"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:18:42.373584",
+        "valueQuantity": {
+          "value": 14,
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "e54bc6f0-6a10-4ec8-b50a-3b5bdf655068",
+        "status": "in-progress",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185345009",
+                "display": "Emergency admission for cardiac condition"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "period": {
+          "start": "2025-03-24T08:05:42.373584"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "29857009",
+                "display": "Chest pain"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "cd2e55bc-b0f5-46bd-a7f0-8cdd66607089",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1191",
+              "display": "Aspirin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "effectiveDateTime": "2025-03-24T08:10:42.373584",
+        "dosage": {
+          "dose": {
+            "value": 325,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "26643006",
+                "display": "Oral route"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "f5a58639-fa61-45d5-a1e3-7ce9f05c2ed4",
+        "status": "active",
+        "description": "Patients presents with classic signs of STEMI including chest pain radiating to left arm, elevated troponin, and ST elevation on ECG. Requires immediate cardiac catheterization.",
+        "subject": {
+          "reference": "Patient/cf776916-2067-432a-8102-9de1d1f0a223"
+        },
+        "date": "2025-03-24T08:20:42.373584",
+        "summary": "ST-Elevation Myocardial Infarction",
+        "problem": [
+          {
+            "reference": "Condition/604c5a0a-fdb4-49b9-9e7a-7b296ae5e95c"
+          }
+        ]
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org/patient-id",
+            "value": "ER-0002"
+          }
+        ],
+        "name": [
+            {
+            "use": "official",
+            "family": "Johnson",
+            "given": [
+              "Sarah"
+            ]
+            }
+        ],
+        "gender": "female",
+        "birthDate": "1988-11-23"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3d4d965a-6eb5-4d72-bbe5-3c40ec031040",
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371162008",
+              "display": "Multiple trauma"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-03-24T10:15:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "8b205f55-5a00-4c35-b19e-a950c9661af6",
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "87642003",
+              "display": "Hemothorax"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-03-24T10:15:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "85df3d4e-5a1f-48be-9111-f22e7c42dd64",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "effectiveDateTime": "2025-03-24T10:20:00.000000",
+        "valueQuantity": {
+          "value": 88,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "b621d4d5-3a56-437c-b7c2-3c5970f2c52a",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 85,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 50,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "effectiveDateTime": "2025-03-24T10:20:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fluid-intake-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "intake-output"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8251-1",
+              "display": "Fluid intake"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "effectiveDateTime": "2025-03-24T11:30:00.000000",
+        "valueQuantity": {
+          "value": 1500,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "lab-hemoglobin-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "effectiveDateTime": "2025-03-24T10:45:00.000000",
+        "valueQuantity": {
+          "value": 8.2,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gcs-score-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9269-2",
+              "display": "Glasgow Coma Scale"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "effectiveDateTime": "2025-03-24T10:25:00.000000",
+        "valueQuantity": {
+          "value": 11,
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "f9e2272f-93e9-4f18-9464-a939a4a4577b",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233586005",
+              "display": "Chest tube insertion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "performedDateTime": "2025-03-24T10:50:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "e9c4f2c6-2bfc-4c6c-9c40-c8f7bbd20e4b",
+        "status": "in-progress",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "371285004",
+                "display": "Emergency admission for trauma"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "period": {
+          "start": "2025-03-24T10:15:00.000000"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305206005",
+                "display": "Motor vehicle accident"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "b93f7b6e-7b9a-4c2e-95e6-9d621e7ab51b",
+        "status": "active",
+        "description": "Patient involved in high-speed MVA with significant chest trauma resulting in hemothorax. Vital signs consistent with hemorrhagic shock. Requires aggressive resuscitation and chest tube placement.",
+        "subject": {
+          "reference": "Patient/a45d8b09-8d4e-4b7a-8a38-f09e7d9a880c"
+        },
+        "date": "2025-03-24T10:35:00.000000",
+        "summary": "Blunt chest trauma with hemothorax, hemorrhagic shock",
+        "problem": [
+          {
+            "reference": "Condition/8b205f55-5a00-4c35-b19e-a950c9661af6"
+          }
+        ]
+      }
+    },
+    
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "5f579f0e-8c02-4a82-9b59-5ac41021b5dc",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org/patient-id",
+            "value": "ER-0003"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Lee",
+            "given": [
+              "Michael"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1967-09-04"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "9a7db5e2-b1c7-4082-a8fe-95b5c6b75a3e",
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422504002",
+              "display": "Ischemic stroke"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-03-24T15:45:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "b4387980-58ab-4315-b84a-8a35d925f3cb",
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "2020-06-15T00:00:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "9c2fb248-02ce-4003-8b35-70aa498b6075",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 198,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 110,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "effectiveDateTime": "2025-03-24T16:00:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gcs-score-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9269-2",
+              "display": "Glasgow Coma Scale"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "effectiveDateTime": "2025-03-24T16:00:00.000000",
+        "valueQuantity": {
+          "value": 13,
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "nihss-score",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "70184-7",
+              "display": "NIH Stroke Scale"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "effectiveDateTime": "2025-03-24T16:05:00.000000",
+        "valueQuantity": {
+          "value": 16,
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "lab-glucose-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2345-7",
+              "display": "Glucose"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "effectiveDateTime": "2025-03-24T16:10:00.000000",
+        "valueQuantity": {
+          "value": 142,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "8e1f5cce-ceac-4a40-93e0-eadbed2d340d",
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "153666",
+              "display": "Lisinopril"
+            }
+          ]
+        },
+        "status": "active",
+        "dosage": [
+          {
+            "text": "10 mg daily",
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 10,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "0072e0a2-6a75-4ae2-841d-492be11007a2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "433112001",
+              "display": "CT scan of head"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "performedDateTime": "2025-03-24T16:30:00.000000"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "40fbcfb8-9d9f-4622-9c74-b66e9e4bb91d",
+        "status": "in-progress",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "50849002",
+                "display": "Emergency admission for CVA (cerebrovascular accident)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "period": {
+          "start": "2025-03-24T15:45:00.000000"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422504002",
+                "display": "Ischemic stroke"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "a0a12ca6-934a-423b-ae9e-cb8e9ddea9ee",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1655281",
+              "display": "Alteplase"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "effectiveDateTime": "2025-03-24T17:00:00.000000",
+        "dosage": {
+          "dose": {
+            "value": 75,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008",
+                "display": "Intravenous route"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "809d16bd-0938-4a0c-a078-58e6ecd8728d",
+        "status": "active",
+        "description": "Patient with sudden right-sided weakness, facial droop and aphasia. CT scan negative for hemorrhage. Patient meets criteria for tPA administration. NIHSS 16.",
+        "subject": {
+          "reference": "Patient/5f579f0e-8c02-4a82-9b59-5ac41021b5dc"
+        },
+        "date": "2025-03-24T16:45:00.000000",
+        "summary": "Acute ischemic stroke, left MCA territory",
+        "problem": [
+          {
+            "reference": "Condition/9a7db5e2-b1c7-4082-a8fe-95b5c6b75a3e"
+          }
+        ]
+      }
+    }
+  ]
+}
